@@ -1,0 +1,288 @@
+/* Google Fonts imports */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+@import url("./ms.css");
+
+/* General styling */
+
+body,
+html,
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #0E4749;
+    padding: 1rem 0;
+}
+
+section {
+    padding: 0 5rem;
+    margin-top: 2rem;
+}
+
+section.current-day-section {
+    margin-top: 2rem;
+}
+
+/* Alert banner text */
+#alert-banner-text {
+    margin: 0;
+}
+#subscribe {
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hide the data content by default until data is retrieved */
+#data-content {
+    display: none;
+}
+
+/* Styles for no data */
+.no-data {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.no-data span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* 
+    Hide the suggested activities until user clicks to subscribe.
+    Event will be handled in JavaScript
+*/
+
+#suggestions {
+    display: none;
+}
+
+/* Text which displays if a city is not found */
+.city-error {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* Logo heading and motto */
+.logo-heading {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #E55812;
+}
+
+.logo-motto {
+    font-size: 20px;
+}
+
+/* Container for the app */
+#app-container {
+    background-color: #EFE7DA;
+    min-height: 100vh;
+    border-radius: 40px;
+    padding-bottom: 3rem;
+}
+
+/* Search bar and button */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+#search-input {
+    padding: 8px;
+    width: 400px;
+    border: 1px solid #E55812;
+    border-radius: 16px;
+    height: 50px;
+}
+
+#search-btn {
+    border: 1px solid #E55812;
+    background-color: #fff;
+    padding: 8px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-btn i {
+    font-size: 20px;
+    color: #E55812;
+}
+
+/* Current day section */
+.day-heading {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+/* Grid layout for current day */
+.current-day-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+}
+
+.hourly-grid-container#day1-hours {
+    margin-top: 2rem;
+}
+
+.current-day-grid>div {
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: -4px 6px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.current-day-grid #current-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-day-img {
+    width: 100px;
+}
+
+.current-day-img-small {
+    width: 60px;
+}
+
+#todays-temp,
+#wind-speed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Grid layout for hours of current day */
+.hourly-grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: .5rem;
+}
+
+/* Styles for hours of current day */
+.hour-img {
+    width: 50px;
+}
+
+/* Styles for hourly boxes */
+.hourly-grid-container>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 16px;
+    height: 180px;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: -4px 6px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.hourly-grid-container div p {
+    margin: 0;
+}
+
+.hourly-grid-container>div>p {
+    font-weight: 600;
+}
+
+.hour-info-box {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.hour-info-box p {
+    font-size: 14px;
+}
+
+.small-icon {
+    width: 20px;
+}
+
+/* Accordion styles */
+.accordion .accordion-body {
+    background-color: #EFE7DA;
+}
+
+
+
+/* ---- Media Queries ----- */
+
+@media screen and (max-width: 1400px) {
+    section {
+        padding: 0 3rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    main#app-container {
+        padding: 2rem;
+    }
+
+    .hourly-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        padding: 0;
+    }
+
+    .hourly-grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 575px) {
+    body {
+        padding: 0;
+    }
+    main#app-container {
+        margin: 0;
+    }
+
+    .logo-heading {
+        font-size: 34px;
+    }
+
+    .current-day-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input#search-input {
+        width: 100%;
+    }
+
+    button#search-btn {
+        width: 70px;
+        height: 70px;
+    }
+
+    button#search-btn i {
+        font-size: 26px;
+    }
+}
